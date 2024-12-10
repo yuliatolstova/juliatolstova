@@ -1,5 +1,13 @@
-body {
+
+@font-face {
+    font-family: 'Parkinsas Regular';
+    src: url('/public/fonts/Parkinsans-Regular.ttf') format('truetype');
+}
+body, input, textarea, button {
+    font-family: 'Parkinsas Regular', sans-serif;
+}
+
+p, h3, label, input, textarea, body {
     margin: 0;
-    font-family: 'Parkinsas-regular';
-    src: url('/public/fonts/Parkinsans-Regular.ttf');
+    padding: 0;
 }
