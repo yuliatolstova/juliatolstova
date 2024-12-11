@@ -2,17 +2,17 @@ import './Header.scss';
 
 const CN = 'jt-header';
 
-const Header = ({onOpenPopup}) => {
+const Header = ({ onOpenPopup }) => {
     return (
         <header className={CN}>
             <nav>
-                <a>Обо мне</a>
-                <a>Опыт работы</a>
-                <a>Портфолио</a>
-                <a>Контакты</a>
+                <a>About</a>
+                <a>Work</a>
+                <a>Contacts</a>
             </nav>
 
-            <button className={`${CN}__btn`} onClick={() => onOpenPopup(true)}>Связаться
+            <button className={`${CN}__btn`} onClick={() => onOpenPopup(true)}>
+                Connect
             </button>
 
             {/*<a*/}

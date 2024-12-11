@@ -1,0 +1,13 @@
+@import '../../core/styles/AppColors.scss';
+
+.jt-work {
+  background-color: $pink;
+  height: 650px;
+  margin-left: -40px;
+  margin-right: -40px;
+  padding: 10px 40px;
+
+  h2 {
+    font-size: 42px;
+  }
+}

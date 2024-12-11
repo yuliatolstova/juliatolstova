@@ -1,146 +1,151 @@
 @import '../../core/styles/AppColors.scss';
 
 .jt-connect-popup {
-  &__background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease, visibility .5s ease;
-    z-index: 1000;
+    &__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.5s ease,
+            visibility 0.5s ease;
+        z-index: 1000;
 
-    &.show {
-      opacity: 1;
-      visibility: visible;
+        &.show {
+            opacity: 1;
+            visibility: visible;
 
-      & .jt-connect-popup__content {
-        transform: translateY(0);
-      }
-    }
-  }
-
-
-
-  &__content {
-    position: relative;
-    width: 800px;
-    height: 500px;
-    transform: translateY(-50px);
-    transition: transform .5s ease;
-    background: $light_background;
-    padding: 30px;
-    border-radius: 15px;
-    z-index: 1001;
-    display: flex;
-    flex-direction: row;
-
-    aside {
-      display: flex;
-      flex-direction: column;
-      width: 400px;
-
-      p {
-        font-size: 18px;
-      }
-    }
-  }
-
-  &__title {
-    font-size: 30px;
-    line-height: 30px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  &__close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0;
-    outline: none;
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 30px;
-      height: 2px;
-      background: $dark_background;
+            & .jt-connect-popup__content {
+                transform: translateY(0);
+            }
+        }
     }
 
-    &:before {
-      transform: translate(-50%, -50%) rotate(45deg);
+    &__content {
+        position: relative;
+        width: 600px;
+        height: 350px;
+        transform: translateY(-50px);
+        transition: transform 0.5s ease;
+        background: $light_background;
+        padding: 30px;
+        border-radius: 15px;
+        z-index: 1001;
+        display: flex;
+        flex-direction: row;
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+            p {
+                font-size: 18px;
+            }
+
+            a {
+                color: $link_hovered;
+                text-underline: none;
+            }
+        }
     }
-    &:after {
-      transform: translate(-50%, -50%) rotate(-45deg);
+
+    &__title {
+        font-size: 26px;
+        line-height: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
     }
-  }
 
-  &__body {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 400px;
-    padding: 20px;
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0;
+        outline: none;
 
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 2px;
+            background: $green;
+        }
 
-    label {
-      display: flex;
-      flex-direction: column;
+        &:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
     }
-  }
 
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 300px;
+        padding: 10px 20px;
 
-  &__name,
-  &__email,
-  &__message {
-    background: $five-percent-black;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 14px;
-    line-height: 16px;
-  }
-
-  &__name,
-  &__email {
-    max-height: 40px;
-  }
-
-  &__message {
-    height: 80px;
-    max-height: 80px;
-  }
-
-  &__send {
-    width: 130px;
-    background: $link_hovered;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    color: $light;
-    padding: 10px 20px;
-    border-radius: 50px;
-
-    transition: background 0.5s linear;
-
-    &:hover {
-      background: $dark_background;
+        label {
+            display: flex;
+            flex-direction: column;
+        }
     }
-  }
+
+    &__name,
+    &__email,
+    &__message {
+        background: $five-percent-black;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    &__name,
+    &__email {
+        max-height: 40px;
+    }
+
+    &__message {
+        height: 80px;
+        max-height: 80px;
+        resize: none;
+    }
+
+    &__send {
+        width: 130px;
+        background: $link_hovered;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        color: $light;
+        padding: 10px 20px;
+        border-radius: 50px;
+
+        transition: background 0.5s linear;
+
+        &:hover {
+            background: $pink;
+            color: $green;
+        }
+    }
 }
